@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>LegalFlow AI - Workflow Automation Prototype</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div>
+      <p class="eyebrow">UNOFFICIAL CONCEPT DEMONSTRATION</p>
+      <h1>LegalFlow AI</h1>
+      <p class="subtitle">Human-gated workflow automation for legal intake and internal review</p>
+    </div>
+    <div class="status-pill"><span></span> Synthetic data only</div>
+  </header>
+
+  <main>
+    <section class="notice">
+      <strong>Prototype scope:</strong> This demo illustrates workflow architecture, not legal advice. It uses fictional information, performs no real client processing, and requires human approval before any downstream action.
+    </section>
+
+    <section class="workflow" aria-label="Workflow stages">
+      <div class="stage active" data-stage="0"><b>1</b><span>Intake</span></div>
+      <div class="connector"></div>
+      <div class="stage" data-stage="1"><b>2</b><span>Extract</span></div>
+      <div class="connector"></div>
+      <div class="stage" data-stage="2"><b>3</b><span>Completeness</span></div>
+      <div class="connector"></div>
+      <div class="stage" data-stage="3"><b>4</b><span>Route</span></div>
+      <div class="connector"></div>
+      <div class="stage" data-stage="4"><b>5</b><span>Summarize</span></div>
+      <div class="connector"></div>
+      <div class="stage" data-stage="5"><b>6</b><span>Validate</span></div>
+      <div class="connector"></div>
+      <div class="stage human" data-stage="6"><b>7</b><span>Human Approval</span></div>
+    </section>
+
+    <section class="grid two">
+      <article class="panel intake-panel">
+        <div class="panel-head">
+          <div>
+            <p class="kicker">INPUT</p>
+            <h2>Fictional Client Intake</h2>
+          </div>
+          <button id="resetBtn" class="ghost">Reset demo</button>
+        </div>
+        <label for="intake">Intake notes</label>
+        <textarea id="intake">Jordan Lee owns a growing Arizona consulting company and three rental properties. Jordan estimates approximately $2.4M in investment and real-estate assets and is concerned about future business liability. One rental property is held in an LLC. Jordan wants to understand what information the firm would need before an asset-protection analysis. Preferred contact is email.</textarea>
+        <div class="button-row">
+          <button id="runBtn" class="primary">Run workflow</button>
+          <button id="alternateBtn" class="secondary">Load alternate example</button>
+        </div>
+        <p class="microcopy">No external API calls. The demo simulates agent boundaries and deterministic checks in-browser.</p>
+      </article>
+
+      <article class="panel">
+        <div class="panel-head">
+          <div>
+            <p class="kicker">STRUCTURED OUTPUT</p>
+            <h2>Extracted Matter Facts</h2>
+          </div>
+          <span id="extractionStatus" class="tag idle">Waiting</span>
+        </div>
+        <div id="facts" class="facts empty-state">Run the workflow to populate structured facts.</div>
+      </article>
+    </section>
+
+    <section class="grid three">
+      <article class="panel">
+        <p class="kicker">COMPLETENESS AGENT</p>
+        <h2>Missing Information</h2>
+        <ul id="missing" class="clean-list muted"><li>Awaiting analysis</li></ul>
+      </article>
+
+      <article class="panel">
+        <p class="kicker">MATTER ROUTER</p>
+        <h2>Internal Routing</h2>
+        <div id="routing" class="routing muted">Awaiting analysis</div>
+      </article>
+
+      <article class="panel">
+        <p class="kicker">VALIDATION LAYER</p>
+        <h2>Grounding & Safety</h2>
+        <div id="validation" class="validation muted">Awaiting analysis</div>
+      </article>
+    </section>
+
+    <section class="grid two">
+      <article class="panel summary-panel">
+        <p class="kicker">INTERNAL SUMMARY AGENT</p>
+        <h2>Attorney / Staff Brief</h2>
+        <div id="summary" class="summary muted">No summary generated yet.</div>
+        <div id="followupWrap" class="followup hidden">
+          <h3>Suggested follow-up questions</h3>
+          <ul id="followups" class="clean-list"></ul>
+        </div>
+      </article>
+
+      <article class="panel approval-panel">
+        <div class="approval-lock">HUMAN REVIEW REQUIRED</div>
+        <h2>Approval Gate</h2>
+        <p id="approvalText" class="muted">Workflow output must be validated before it can move to any client-facing or document-production step.</p>
+        <div class="button-row">
+          <button id="approveBtn" class="primary" disabled>Approve internal package</button>
+          <button id="changesBtn" class="secondary" disabled>Request changes</button>
+        </div>
+        <div id="approvalState" class="approval-state">Locked until validation completes.</div>
+      </article>
+    </section>
+
+    <section class="panel audit-panel">
+      <div class="panel-head">
+        <div>
+          <p class="kicker">AUDITABILITY</p>
+          <h2>Workflow Audit Trail</h2>
+        </div>
+        <span class="tag">Local simulation</span>
+      </div>
+      <ol id="audit" class="audit">
+        <li><time>--:--:--</time><span>Demo ready. No data has left this browser.</span></li>
+      </ol>
+    </section>
+
+    <section class="architecture panel">
+      <p class="kicker">DESIGN PRINCIPLE</p>
+      <h2>AI where judgment helps. Deterministic controls where certainty matters.</h2>
+      <div class="architecture-grid">
+        <div><strong>AI-assisted stages</strong><span>Extraction, summarization, question generation</span></div>
+        <div><strong>Deterministic controls</strong><span>Required fields, schemas, state transitions, audit logging</span></div>
+        <div><strong>Human authority</strong><span>Attorney/staff approval before downstream action</span></div>
+        <div><strong>Integration later</strong><span>APIs, MCP, webhooks, document systems after workflow discovery</span></div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    Built by Cayden Williams as an AI workflow design prototype. Not affiliated with any law firm. No legal advice is provided.
+  </footer>
+  <script src="app.js"></script>
+</body>
+</html>
