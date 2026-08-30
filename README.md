@@ -1,55 +1,113 @@
 # Hi, I'm Cayden Williams 👋
 
-Computer Science (Cybersecurity) student at **Arizona State University**, interested in
-artificial intelligence, workflow design, cybersecurity, and practical technology systems
-that actually get used.
+I'm a **Computer Science (Cybersecurity) student at Arizona State University** building practical security skills through hands-on labs, endpoint-security work, technical experimentation, and independent projects.
 
-I build **AI-assisted prototypes and operational workflows** — designing the system,
-engineering the prompts, evaluating the outputs, and iterating. I direct AI tools to build
-things I've specified, then test and refine the results.
+My current focus is cybersecurity — especially **security engineering, offensive security, system security, and detection**. I also have a background building AI-assisted systems and multi-agent workflows, which I’m increasingly interested in applying to security problems.
 
 ---
 
-## 🔭 What I'm working on
+## 🔐 Cybersecurity
 
-- **NewGenAI TV Network** *(active development)* — an AI-assisted creative production
-  system for short-form animated content. The working piece is an **Agent Ops Dashboard**:
-  a 12-step, human-gated pipeline (idea → script → shot list → prompts → package) with
-  cross-session memory and short-form viability scoring.
-  → [NewGenAI TV Network repository](https://github.com/caydenrubiowill/NewGenAI-TV-Network)
+I’m developing hands-on experience across web security, operating systems, networking fundamentals, and endpoint security.
 
-- **ReachLineAZ** *(archived prototype)* — my first substantial AI-assisted project: an
-  automated inbound-lead follow-up concept for local businesses (website, legal pages,
-  lead-tracker schema, and a no-code workflow design). Discontinued as a business and kept
-  as a learning artifact.
-  → [ReachLineAZ repository](https://github.com/caydenrubiowill/ReachLineAZ-Prototype)
+Current work and training includes:
 
-## 🌱 Focus areas
+- Authorized web-security labs using **Nmap, Gobuster, curl, Linux CLI, and HTTP tooling**
+- Service and port enumeration, endpoint discovery, HTTP headers, cookies, and sessions
+- Authentication and authorization testing, including access-control / IDOR concepts
+- API discovery and file-upload validation testing in controlled environments
+- **Windows 11 endpoint-security assessment and hardening**, including antivirus posture, firewall configuration and logging, BitLocker, TPM, Secure Boot, Windows Update, startup applications, and remediation planning
+- PowerShell-based system inspection and technical documentation
+- **TryHackMe Jr Penetration Tester** learning path — in progress
+- Member of the **Hacking Club at ASU**, building toward more CTF and collaborative security experience
 
-- AI systems & workflow design
-- Prompt and systems engineering
-- Human-in-the-loop / approval-gated automation
-- Output evaluation and iteration
-- Cybersecurity (current coursework)
+I try to treat labs like real engineering work: understand the system, collect evidence, document what happened, identify why it matters, and verify changes instead of simply running tools.
 
-## 🎓 Learning
+---
 
-- **Claude 101**
-- **AI Fluency: Framework & Foundations**
+## 🔭 Selected Projects
 
-## 🧰 How I describe my work
+### Windows Endpoint Security Assessment & Hardening — *In Progress*
 
-I'm an **early-career technology builder** and **AI workflow / systems designer**. I work
-heavily with AI tools and am transparent about it — each project includes an AI-assistance
-disclosure describing what I designed and decided versus what the tools generated.
+A documented Windows 11 security project focused on establishing a before-state baseline, identifying security gaps, prioritizing remediation, and verifying improvements.
+
+Areas assessed include antivirus configuration, firewall logging, drive encryption, TPM and Secure Boot, Windows updates, local/system posture, and startup applications. I’m developing the work into a repeatable **assessment → remediation → verification** lab suitable for a public portfolio.
+
+*Repository coming as the project is formalized and sanitized for public release.*
+
+### NewGenAI TV Network / Agent Ops System — *Active Development*
+
+[View repository →](https://github.com/caydenrubiowill/NewGenAI-TV-Network)
+
+This originally started as an AI-assisted animation/production experiment, but the part I find most technically interesting is the **agent orchestration and decision system behind it**.
+
+The project includes a human-gated multi-stage workflow, persistent creative memory, structured model outputs, validation and recovery behavior, and an experimental multi-agent development engine where multiple ideation agents generate competing candidates that move through deterministic gates, specialist reviews, producer synthesis, bounded revision, and final human approval.
+
+That work pushed me to think about problems that also matter in security engineering: **trust boundaries, validation, failure handling, persistent state, controlled autonomy, human approval, deterministic stop conditions, and verifying AI-generated output rather than blindly accepting it.**
+
+### ReachLineAZ — *Archived Prototype*
+
+[View repository →](https://github.com/caydenrubiowill/ReachLineAZ-Prototype)
+
+An earlier AI-assisted automation prototype for inbound lead follow-up. It included workflow design, a website and legal pages, a lead-tracking schema, and automation planning. The business concept was discontinued, but I keep the repository as a record of earlier systems and automation work.
+
+### Next Up
+
+**Guarded AI SOC / Detection Lab** — planned project exploring SIEM telemetry, attack simulation, detection engineering, and guarded AI-assisted security analysis. *Planned — not started.*
+
+---
+
+## 🧰 Technical Toolkit
+
+**Security**  
+Nmap · Gobuster · curl · HTTP/session analysis · web enumeration · access-control testing · endpoint-security assessment
+
+**Systems**  
+Windows 11 · Linux CLI · PowerShell · networking fundamentals · system troubleshooting
+
+**Development & Tools**  
+Git · GitHub · technical documentation · structured testing · React/JavaScript exposure
+
+**AI-Assisted Engineering**  
+Claude · Claude Code · Codex · ChatGPT · prompt/system design · agent workflows · human-in-the-loop controls · output validation
+
+---
+
+## 🎯 Current Focus
+
+- Security engineering and system hardening
+- Offensive security / red-team fundamentals
+- Networking and operating-system security
+- Detection engineering and security operations
+- CTFs and hands-on security labs
+- Secure and responsible use of AI in technical and security workflows
+
+---
+
+## 🎓 Education & Community
+
+**Arizona State University**  
+B.S. Computer Science — Cybersecurity
+
+**Hacking Club at ASU**  
+Member — developing practical security skills through community learning and future CTF participation
+
+---
+
+## 🧠 AI + Security
+
+Before cybersecurity became my primary focus, I spent significant time experimenting with AI-assisted systems, workflow orchestration, persistent memory, agent coordination, human approval gates, and failure handling.
+
+I see that background as a useful complement to security rather than a separate identity. I’m especially interested in how AI-enabled systems can be **validated, constrained, monitored, and safely incorporated into security workflows**.
+
+---
 
 ## 📫 Connect
 
 - [LinkedIn](https://www.linkedin.com/in/cayden-williams-742547416)
-- [NewGenAI TV Network](https://github.com/caydenrubiowill/NewGenAI-TV-Network)
+- [NewGenAI TV Network / Agent Ops](https://github.com/caydenrubiowill/NewGenAI-TV-Network)
 - [ReachLineAZ Prototype](https://github.com/caydenrubiowill/ReachLineAZ-Prototype)
 
 ---
 
-*Currently a CS student building real systems with AI — learning by shipping prototypes,
-documenting them honestly, and iterating.*
+*Early in my cybersecurity career, but actively building, testing, documenting, and learning.*
