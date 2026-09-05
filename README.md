@@ -16,8 +16,9 @@ Current work and training includes:
 - Service and port enumeration, endpoint discovery, HTTP headers, cookies, and sessions
 - Authentication and authorization testing, including access-control / IDOR concepts
 - API discovery and file-upload validation testing in controlled environments
-- **Windows 11 endpoint-security assessment and hardening**, including antivirus posture, firewall configuration and logging, BitLocker, TPM, Secure Boot, Windows Update, startup applications, and remediation planning
-- PowerShell-based system inspection and technical documentation
+- **Windows endpoint-security auditing and hardening with PowerShell**
+- Security posture review across BitLocker, TPM, Secure Boot, firewall, logging, local policy, Defender/third-party AV context, services, and updates
+- Building repeatable security tooling with structured reports, sanitization, rollback records, and verification
 - **TryHackMe Jr Penetration Tester** learning path — in progress
 - Member of the **Hacking Club at ASU**, building toward more CTF and collaborative security experience
 
@@ -27,13 +28,28 @@ I try to treat labs like real engineering work: understand the system, collect e
 
 ## 🔭 Selected Projects
 
-### Windows Endpoint Security Assessment & Hardening — *In Progress*
+### Windows Endpoint Security Lab — *v0.1 Built / Validation Ongoing*
 
-A documented Windows 11 security project focused on establishing a before-state baseline, identifying security gaps, prioritizing remediation, and verifying improvements.
+I built a modular **PowerShell Windows endpoint assessment and hardening framework** for evaluating a Windows 11 system, documenting security posture, planning remediation, and verifying changes.
 
-Areas assessed include antivirus configuration, firewall logging, drive encryption, TPM and Secure Boot, Windows updates, local/system posture, and startup applications. I’m developing the work into a repeatable **assessment → remediation → verification** lab suitable for a public portfolio.
+Current v0.1 includes:
 
-*Repository coming as the project is formalized and sanitized for public release.*
+- **60 security checks** across System, Identity, Network, Defense, Logging, PowerShell, Services, and Updates
+- Context-aware findings using PASS / WARNING / FAIL / INFO / SKIPPED / ERROR states
+- Structured **JSON, CSV, Markdown, and self-contained HTML reports**
+- A remediation engine covering **42 checks**, with risk levels, `-WhatIf`, per-change confirmation, state capture, re-testing, change records, and rollback support
+- A **before/after comparison tool** for measuring hardening changes
+- A data-level **sanitizer** that removes hostnames, usernames, SIDs, SSIDs, private IPs, MAC addresses, and emails before evidence is published
+- Dependency-free self-tests plus a Pester 5 test suite
+- Compatibility validation under both **PowerShell 7.6** and **Windows PowerShell 5.1**
+
+A non-elevated baseline run completed with **zero ERROR findings**, and the self-test currently passes **14/14** on both PowerShell engines.
+
+The project has already identified real hardening opportunities on the test endpoint, including drive encryption, password-policy, network-protocol, firewall-logging, PowerShell-logging, and audit-policy improvements.
+
+**Current boundary:** audit/reporting and WhatIf remediation paths are validated; live Apply/Rollback remains intentionally unexecuted until an elevated before → harden → after validation cycle is performed.
+
+*The full repository has been prepared locally with documentation, generated check catalog, sanitized sample output, tests, architecture notes, and project-status documentation. Public repository push is the next publishing step.*
 
 ### NewGenAI TV Network / Agent Ops System — *Active Development*
 
@@ -60,13 +76,13 @@ An earlier AI-assisted automation prototype for inbound lead follow-up. It inclu
 ## 🧰 Technical Toolkit
 
 **Security**  
-Nmap · Gobuster · curl · HTTP/session analysis · web enumeration · access-control testing · endpoint-security assessment
+Nmap · Gobuster · curl · HTTP/session analysis · web enumeration · access-control testing · endpoint-security assessment · Windows hardening
 
 **Systems**  
-Windows 11 · Linux CLI · PowerShell · networking fundamentals · system troubleshooting
+Windows 11 · Linux CLI · PowerShell 5.1/7 · Windows security controls · networking fundamentals · system troubleshooting
 
 **Development & Tools**  
-Git · GitHub · technical documentation · structured testing · React/JavaScript exposure
+Git · GitHub · PowerShell scripting · structured testing · JSON/CSV/Markdown reporting · technical documentation · React/JavaScript exposure
 
 **AI-Assisted Engineering**  
 Claude · Claude Code · Codex · ChatGPT · prompt/system design · agent workflows · human-in-the-loop controls · output validation
