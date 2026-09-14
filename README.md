@@ -6,22 +6,26 @@ I build hands-on projects to understand how systems fail, how security controls 
 
 ---
 
-## 🛡️ Current Research: AIRLOCK
+## 🛡️ AIRLOCK — AI Agent Security Research
 
 ### External security infrastructure for autonomous AI agents
 
-**AIRLOCK** is an early-stage AI-security research project exploring an independent security boundary around autonomous agents.
+**AIRLOCK** is an AI-security research and engineering project exploring an independent security boundary around autonomous agents.
 
 > **AI agents should not be trusted to police themselves.**
 
-The project currently explores four connected areas:
+AIRLOCK has now reached a verified **Milestone 1 reference implementation** in a controlled local environment.
 
-- **AIRLOCK** — external control and containment
-- **AEGIS** — agent identity and authorization
-- **BEACON** — cross-agent detection and correlation
-- **MIRAGE** — controlled isolation and defensive deception
+The system currently combines:
 
-I am deliberately keeping implementation details private while the architecture and experiments mature. The public material documents the research direction without publishing the complete engineering blueprint.
+- **AIRLOCK** — an external reference monitor for agent requests, authorization decisions, and quarantine
+- **AEGIS** — signed agent identity, scoped authority, delegation, and revocation
+- **BEACON** — hash-chained telemetry, signed evidence, and incident correlation
+- **MIRAGE** — a synthetic environment for quarantined-agent interaction and observation
+
+The current verification gate passes **309 automated tests**. A deterministic demo exercises allowed activity, denied capability use, quarantine, MIRAGE routing, canary access, and a signed critical incident timeline. The project has also gone through separate design and code adversarial-review passes, with confirmed findings fixed and regression-tested.
+
+The implementation repository remains private while the system is actively developed and reviewed. The public brief documents the verified milestones and research direction without publishing the complete enforcement logic or implementation blueprint.
 
 [Read the AIRLOCK public brief →](./AIRLOCK.md)
 
@@ -46,7 +50,7 @@ I try to treat labs like engineering work: collect evidence, understand the fail
 
 ### Windows Endpoint Security Lab
 
-A modular PowerShell endpoint assessment and hardening framework for Windows 11. The current local version includes dozens of security checks, structured reports, remediation planning, before/after comparison, evidence sanitization, benchmark mappings, and automated validation across PowerShell 5.1 and 7.
+A modular PowerShell endpoint assessment and hardening framework for Windows 11 with security checks, structured reporting, remediation planning, before/after comparison, evidence sanitization, benchmark mappings, and automated validation across PowerShell 5.1 and 7.
 
 ### NewGenAI TV Network / Agent Ops System
 
@@ -73,10 +77,10 @@ Nmap · Gobuster · curl · HTTP/session analysis · web enumeration · access-c
 Windows 11 · Linux CLI · PowerShell 5.1/7 · networking fundamentals · system troubleshooting
 
 **Development**  
-Git · GitHub · PowerShell · Java · JavaScript/React · JSON/CSV/Markdown/HTML reporting · schema validation · technical documentation
+Git · GitHub · PowerShell · Python · Java · JavaScript/React · structured testing · JSON/CSV/Markdown/HTML reporting · technical documentation
 
-**AI Systems**  
-Agent workflows · human-in-the-loop controls · structured model outputs · orchestration · output validation · trust-boundary design
+**AI / Agent Security**  
+Agent workflows · trust-boundary design · authorization · signed identity · delegation · containment · quarantine · security telemetry · human-in-the-loop controls · adversarial review
 
 ---
 
