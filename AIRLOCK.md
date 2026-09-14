@@ -4,36 +4,57 @@
 
 > **AI agents should not be trusted to police themselves.**
 
-AIRLOCK is an early-stage AI-security research and engineering project exploring an independent security boundary around autonomous agents.
+AIRLOCK is an AI-security research and engineering project exploring an independent security boundary around autonomous agents.
 
 As agents gain access to tools, data, credentials, external systems, and other agents, model-level safeguards are only part of the security problem. AIRLOCK asks a broader question:
 
 **How can we enforce security around an AI agent even if the agent itself becomes compromised, manipulated, or untrustworthy?**
 
+## Current status — Milestone 1 verified
+
+The project has moved beyond architecture into a working local reference implementation.
+
+Milestone 1 currently demonstrates, in a controlled environment:
+
+- **AEGIS** — cryptographically signed agent identity, scoped authority, delegation, and revocation
+- **AIRLOCK** — an external reference monitor that evaluates agent requests before actions are allowed
+- **MIRAGE** — a synthetic environment used after quarantine for controlled interaction and observation
+- **BEACON** — chained security telemetry, signed evidence, and deterministic incident correlation
+
+The implementation enforces independent identity binding, least-privilege capability checks, quarantine state transitions, ancestor-aware authority withdrawal, and signed security evidence.
+
+A deterministic demonstration shows an in-scope action being allowed, unauthorized actions being denied, a higher-risk action triggering quarantine, subsequent activity being routed into MIRAGE, and BEACON producing a signed critical incident timeline.
+
+The current verification gate passes **309 automated tests**. The project has also completed separate design and code adversarial-review passes; confirmed findings from those reviews were fixed and covered with regression tests.
+
 ## Research direction
 
-The project currently explores four connected areas:
+AIRLOCK currently combines four connected security areas:
 
-- **AIRLOCK** — external control and containment for agent activity
+- **AIRLOCK** — external control and containment
 - **AEGIS** — verifiable agent identity and authorization
-- **BEACON** — detection and correlation across agent activity
+- **BEACON** — detection, evidence, and cross-event correlation
 - **MIRAGE** — controlled isolation and defensive deception
 
-Together, they are intended to investigate how agent environments could support independent oversight, enforceable boundaries, incident detection, and post-incident accountability.
+Together, they explore how autonomous-agent environments could support independent oversight, enforceable boundaries, incident detection, containment, and post-incident accountability.
 
-## Why now
+## What this is — and is not
 
-Autonomous agents are moving from simple conversational systems toward software that can perform multi-step work across real systems. That creates security questions that look increasingly familiar to cybersecurity: identity, authorization, trust boundaries, monitoring, containment, incident response, and forensics.
+This is a **research prototype**, not a production security product.
 
-AIRLOCK is my attempt to explore that intersection from a security-engineering perspective.
+Milestone 1 runs in a controlled local environment. It does not yet claim process isolation, hardware-backed identity, production credential brokering, real-model containment, or a hardened network security boundary.
+
+Those limitations are intentional and documented because the goal is to test each security assumption rather than hide it.
 
 ## Public scope
 
-**Status: architecture / early research.**
+The implementation repository remains private while the system is actively being developed and reviewed.
 
-This page intentionally describes the project at a high level while implementation details, detection logic, enforcement mechanisms, and experimental designs remain under active development.
+This public page documents the thesis, verified milestones, and research direction without publishing the full enforcement logic, experimental design, or implementation blueprint.
 
-The goal of publishing now is to establish the research direction, invite serious technical discussion, and document the project as it develops — not to release the complete implementation blueprint before the work is mature.
+## Next research milestone
+
+The next major step is to strengthen the boundary itself: process-isolate the agent behind a narrow channel, expand incident correlation and operator recovery, and place a real read-only external adapter behind the same authorization and evidence pipeline.
 
 ## Core thesis
 
@@ -43,6 +64,6 @@ The goal of publishing now is to establish the research direction, invite seriou
 
 I'm **Cayden Williams**, a Computer Science (Cybersecurity) student at Arizona State University building hands-on work in security engineering, systems security, AI-agent workflows, and autonomous-agent security.
 
-I'm actively interested in **cybersecurity, AI-security, security-engineering, and research internship opportunities** where I can contribute, learn from experienced teams, and continue developing this work.
+I'm actively interested in **cybersecurity, AI-security, security-engineering, and research internship opportunities** where I can contribute, learn from experienced teams, and keep developing this work.
 
 For additional projects and contact information, see my [GitHub profile](./README.md).
