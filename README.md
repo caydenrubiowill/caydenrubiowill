@@ -1,78 +1,72 @@
 # Hi, I'm Cayden Williams 👋
 
-I'm a **Computer Science (Cybersecurity) student at Arizona State University** building practical security skills through hands-on labs, endpoint-security work, technical experimentation, and independent projects.
+I'm a **Computer Science (Cybersecurity) student at Arizona State University** focused on security engineering, system security, detection, and the emerging problem of securing autonomous AI agents.
 
-My current focus is cybersecurity — especially **security engineering, offensive security, system security, and detection**. I also have a background building AI-assisted systems and multi-agent workflows, which I’m increasingly interested in applying to security problems.
+I build hands-on projects to understand how systems fail, how security controls can be enforced, and how evidence can be collected and verified instead of trusting a system to report on itself.
 
 ---
 
-## 🔐 Cybersecurity
+## 🛡️ Current Research: AIRLOCK
 
-I’m developing hands-on experience across web security, operating systems, networking fundamentals, and endpoint security.
+### External security infrastructure for autonomous AI agents
 
-Current work and training includes:
+**AIRLOCK** is an early-stage architecture exploring how autonomous agents can be **identified, constrained, monitored, contained, and investigated from outside the agent itself**.
+
+The core thesis:
+
+> **AI agents should not be trusted to police themselves.**
+
+As agents gain tool access, credentials, code execution, browser control, persistent state, and the ability to delegate work to other agents, model-level safeguards are only one part of the security problem. AIRLOCK explores an independent enforcement layer around the agent.
+
+The architecture currently includes four connected ideas:
+
+- **AIRLOCK** — runtime monitoring, capability leases, policy enforcement, containment, kill-switch controls, and forensic records
+- **AEGIS** — cryptographic agent identity, provenance, authorization, delegation, and revocation
+- **BEACON** — cross-agent telemetry correlation and early warning for coordinated or propagating compromise
+- **MIRAGE** — deceptive, instrumented environments for suspicious agents
+
+**Status:** architecture / early research. This is not presented as a finished security product or compliance solution.
+
+[Read the AIRLOCK concept brief →](./AIRLOCK.md)
+
+---
+
+## 🔐 Cybersecurity Work
+
+My current hands-on work includes:
 
 - Authorized web-security labs using **Nmap, Gobuster, curl, Linux CLI, and HTTP tooling**
-- Service and port enumeration, endpoint discovery, HTTP headers, cookies, and sessions
-- Authentication and authorization testing, including access-control / IDOR concepts
-- API discovery and file-upload validation testing in controlled environments
-- **Windows endpoint-security auditing and hardening with PowerShell**
-- Security posture review across BitLocker, TPM, Secure Boot, firewall, logging, local policy, Defender/third-party AV context, services, updates, exploit mitigations, NTLM posture, application control, and legacy network settings
-- Building repeatable security tooling with structured reports, sanitization, rollback records, benchmark mappings, and verification
-- **TryHackMe Jr Penetration Tester** learning path — in progress
-- Member of the **Hacking Club at ASU**, building toward more CTF and collaborative security experience
+- Authentication / authorization testing and access-control concepts
+- Windows endpoint-security assessment and hardening with **PowerShell**
+- Structured reporting, sanitization, rollback records, benchmark mappings, and verification
+- **TryHackMe Jr Penetration Tester** learning path
+- Member of the **Hacking Club at ASU**
 
-I try to treat labs like real engineering work: understand the system, collect evidence, document what happened, identify why it matters, and verify changes instead of simply running tools.
+I try to treat labs like engineering work: collect evidence, understand the failure mode, document why it matters, and verify the result.
 
 ---
 
 ## 🔭 Selected Projects
 
-### Windows Endpoint Security Lab — *v0.2.0 / Validation Ongoing*
+### Windows Endpoint Security Lab
 
-I built a modular **PowerShell Windows endpoint assessment and hardening framework** for evaluating a Windows 11 system, documenting security posture, planning remediation, and verifying changes.
+A modular PowerShell endpoint assessment and hardening framework for Windows 11. The current local version includes dozens of security checks, structured reports, remediation planning, before/after comparison, evidence sanitization, benchmark mappings, and automated validation across PowerShell 5.1 and 7.
 
-Current v0.2.0 includes:
+The project is intentionally built around repeatability and evidence rather than one-off hardening commands.
 
-- **72 security checks** across System, Identity, Network, Defense, Logging, PowerShell, Services, and Updates
-- Coverage for controls including Kernel DMA Protection, exploit mitigations, Credential Guard, Windows Hello, NTLM session security, DNS over HTTPS, WPAD, legacy TLS, Remote Assistance, application-control posture, and point-and-print security
-- Context-aware findings using PASS / WARNING / FAIL / INFO / SKIPPED / ERROR states
-- Structured **JSON, CSV, Markdown, and self-contained HTML reports**
-- A remediation engine covering **48 checks** (**40 Low-risk, 8 Medium-risk**) with `-WhatIf`, confirmation, pre-change state validation, automatic re-testing, change records, rollback support, and tamper detection
-- A **before/after comparison system** that highlights improvements, regressions, unchanged controls, score/count deltas, and produces a self-contained comparison report
-- A data-level **sanitizer** that removes hostnames, usernames, SIDs, SSIDs, private/public IPs, MAC addresses, and emails before evidence is published
-- **217 framework mappings across 70 checks**, spanning MITRE ATT&CK, CIS Windows 11 control titles, and Microsoft security-baseline paths where verified
-- Dependency-free validation plus a Pester 5 suite
-- **102 self-test cases** covering discovery, schema validation, malformed definitions, duplicate IDs, sanitization, comparison behavior, remediation records, rollback integrity, and WhatIf safety
-- Compatibility validation under both **PowerShell 7.6.5** and **Windows PowerShell 5.1**
-
-The current test gate passes **102/102 on both PowerShell engines**, and full audits complete with **zero ERROR findings** on both.
-
-The project has already surfaced real hardening opportunities on the test endpoint, including drive encryption, password-policy, network-protocol, firewall-logging, PowerShell-logging, NTLM auditing/session-security, WPAD, Remote Assistance, Kernel DMA Protection, and application-control posture.
-
-**Current boundary:** audit/reporting, sanitization, schema validation, comparison, and WhatIf remediation paths are validated. Real Apply/Rollback has intentionally not yet been exercised against the machine; the next milestone is an elevated **before → approved low-risk hardening → after → compare** cycle with sanitized evidence.
-
-*The full repository is currently maintained locally with documentation, generated check catalog, sanitized sample output, tests, architecture notes, changelog, and project-status documentation. Public repository push is the next publishing step.*
-
-### NewGenAI TV Network / Agent Ops System — *Active Development*
+### NewGenAI TV Network / Agent Ops System
 
 [View repository →](https://github.com/caydenrubiowill/NewGenAI-TV-Network)
 
-This originally started as an AI-assisted animation/production experiment, but the part I find most technically interesting is the **agent orchestration and decision system behind it**.
+An AI-assisted production and orchestration system with persistent state, structured model outputs, deterministic gates, specialist review, bounded revision, human approval, and failure-recovery behavior.
 
-The project includes a human-gated multi-stage workflow, persistent creative memory, structured model outputs, validation and recovery behavior, and an experimental multi-agent development engine where multiple ideation agents generate competing candidates that move through deterministic gates, specialist reviews, producer synthesis, bounded revision, and final human approval.
+Building it pushed me toward AI security questions involving **trust boundaries, controlled autonomy, validation, delegation, persistent state, and independent oversight** — which directly informed AIRLOCK.
 
-That work pushed me to think about problems that also matter in security engineering: **trust boundaries, validation, failure handling, persistent state, controlled autonomy, human approval, deterministic stop conditions, and verifying AI-generated output rather than blindly accepting it.**
-
-### ReachLineAZ — *Archived Prototype*
+### ReachLineAZ — Archived Prototype
 
 [View repository →](https://github.com/caydenrubiowill/ReachLineAZ-Prototype)
 
-An earlier AI-assisted automation prototype for inbound lead follow-up. It included workflow design, a website and legal pages, a lead-tracking schema, and automation planning. The business concept was discontinued, but I keep the repository as a record of earlier systems and automation work.
-
-### Next Up
-
-**Guarded AI SOC / Detection Lab** — planned project exploring SIEM telemetry, attack simulation, detection engineering, and guarded AI-assisted security analysis. *Planned — not started.*
+An earlier AI-assisted automation prototype for inbound lead follow-up. I keep it as a record of earlier systems and workflow experimentation.
 
 ---
 
@@ -82,24 +76,24 @@ An earlier AI-assisted automation prototype for inbound lead follow-up. It inclu
 Nmap · Gobuster · curl · HTTP/session analysis · web enumeration · access-control testing · endpoint-security assessment · Windows hardening · security-control validation
 
 **Systems**  
-Windows 11 · Linux CLI · PowerShell 5.1/7 · Windows security controls · networking fundamentals · system troubleshooting
+Windows 11 · Linux CLI · PowerShell 5.1/7 · networking fundamentals · system troubleshooting
 
-**Development & Tools**  
-Git · GitHub · PowerShell scripting · structured testing · JSON/CSV/Markdown/HTML reporting · schema validation · technical documentation · React/JavaScript exposure
+**Development**  
+Git · GitHub · PowerShell · Java · JavaScript/React · JSON/CSV/Markdown/HTML reporting · schema validation · technical documentation
 
-**AI-Assisted Engineering**  
-Claude · Claude Code · Codex · ChatGPT · prompt/system design · agent workflows · human-in-the-loop controls · output validation
+**AI Systems**  
+Agent workflows · human-in-the-loop controls · structured model outputs · orchestration · output validation · trust-boundary design
 
 ---
 
 ## 🎯 Current Focus
 
+- AI agent security and containment
 - Security engineering and system hardening
-- Offensive security / red-team fundamentals
-- Networking and operating-system security
+- Identity, authorization, and least-privilege design
 - Detection engineering and security operations
+- Offensive-security fundamentals
 - CTFs and hands-on security labs
-- Secure and responsible use of AI in technical and security workflows
 
 ---
 
@@ -109,24 +103,17 @@ Claude · Claude Code · Codex · ChatGPT · prompt/system design · agent workf
 B.S. Computer Science — Cybersecurity
 
 **Hacking Club at ASU**  
-Member — developing practical security skills through community learning and future CTF participation
-
----
-
-## 🧠 AI + Security
-
-Before cybersecurity became my primary focus, I spent significant time experimenting with AI-assisted systems, workflow orchestration, persistent memory, agent coordination, human approval gates, and failure handling.
-
-I see that background as a useful complement to security rather than a separate identity. I’m especially interested in how AI-enabled systems can be **validated, constrained, monitored, and safely incorporated into security workflows**.
+Member
 
 ---
 
 ## 📫 Connect
 
 - [LinkedIn](https://www.linkedin.com/in/cayden-williams-742547416)
+- [AIRLOCK concept brief](./AIRLOCK.md)
 - [NewGenAI TV Network / Agent Ops](https://github.com/caydenrubiowill/NewGenAI-TV-Network)
 - [ReachLineAZ Prototype](https://github.com/caydenrubiowill/ReachLineAZ-Prototype)
 
 ---
 
-*Early in my cybersecurity career, but actively building, testing, documenting, and learning.*
+*Building, testing, documenting, and learning in public.*
