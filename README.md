@@ -10,24 +10,20 @@ I build hands-on projects to understand how systems fail, how security controls 
 
 ### External security infrastructure for autonomous AI agents
 
-**AIRLOCK** is an early-stage architecture exploring how autonomous agents can be **identified, constrained, monitored, contained, and investigated from outside the agent itself**.
-
-The core thesis:
+**AIRLOCK** is an early-stage AI-security research project exploring an independent security boundary around autonomous agents.
 
 > **AI agents should not be trusted to police themselves.**
 
-As agents gain tool access, credentials, code execution, browser control, persistent state, and the ability to delegate work to other agents, model-level safeguards are only one part of the security problem. AIRLOCK explores an independent enforcement layer around the agent.
+The project currently explores four connected areas:
 
-The architecture currently includes four connected ideas:
+- **AIRLOCK** — external control and containment
+- **AEGIS** — agent identity and authorization
+- **BEACON** — cross-agent detection and correlation
+- **MIRAGE** — controlled isolation and defensive deception
 
-- **AIRLOCK** — runtime monitoring, capability leases, policy enforcement, containment, kill-switch controls, and forensic records
-- **AEGIS** — cryptographic agent identity, provenance, authorization, delegation, and revocation
-- **BEACON** — cross-agent telemetry correlation and early warning for coordinated or propagating compromise
-- **MIRAGE** — deceptive, instrumented environments for suspicious agents
+I am deliberately keeping implementation details private while the architecture and experiments mature. The public material documents the research direction without publishing the complete engineering blueprint.
 
-**Status:** architecture / early research. This is not presented as a finished security product or compliance solution.
-
-[Read the AIRLOCK concept brief →](./AIRLOCK.md)
+[Read the AIRLOCK public brief →](./AIRLOCK.md)
 
 ---
 
@@ -52,15 +48,13 @@ I try to treat labs like engineering work: collect evidence, understand the fail
 
 A modular PowerShell endpoint assessment and hardening framework for Windows 11. The current local version includes dozens of security checks, structured reports, remediation planning, before/after comparison, evidence sanitization, benchmark mappings, and automated validation across PowerShell 5.1 and 7.
 
-The project is intentionally built around repeatability and evidence rather than one-off hardening commands.
-
 ### NewGenAI TV Network / Agent Ops System
 
 [View repository →](https://github.com/caydenrubiowill/NewGenAI-TV-Network)
 
 An AI-assisted production and orchestration system with persistent state, structured model outputs, deterministic gates, specialist review, bounded revision, human approval, and failure-recovery behavior.
 
-Building it pushed me toward AI security questions involving **trust boundaries, controlled autonomy, validation, delegation, persistent state, and independent oversight** — which directly informed AIRLOCK.
+Building it pushed me toward AI-security questions involving **trust boundaries, controlled autonomy, validation, delegation, persistent state, and independent oversight** — which directly informed AIRLOCK.
 
 ### ReachLineAZ — Archived Prototype
 
@@ -107,13 +101,21 @@ Member
 
 ---
 
+## 💼 Opportunities
+
+I am actively looking for **cybersecurity, AI-security, security-engineering, and research internship opportunities** where I can contribute to real technical work, learn from experienced teams, and continue developing practical security skills.
+
+If your team is working on autonomous agents, AI security, IAM, detection engineering, endpoint security, or security research, I'd be especially interested in connecting.
+
+---
+
 ## 📫 Connect
 
 - [LinkedIn](https://www.linkedin.com/in/cayden-williams-742547416)
-- [AIRLOCK concept brief](./AIRLOCK.md)
+- [AIRLOCK public brief](./AIRLOCK.md)
 - [NewGenAI TV Network / Agent Ops](https://github.com/caydenrubiowill/NewGenAI-TV-Network)
 - [ReachLineAZ Prototype](https://github.com/caydenrubiowill/ReachLineAZ-Prototype)
 
 ---
 
-*Building, testing, documenting, and learning in public.*
+*Building, testing, documenting, and learning in public — while keeping unfinished security implementation details protected.*
